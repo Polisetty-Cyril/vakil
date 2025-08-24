@@ -1,12 +1,16 @@
 import { ButtonAscent } from "../components/ButtonAscent";
 import { ButtonWhite } from "../components/ButtonWhite";
+import { Typewriter } from "../components/Typewriter";
 
 export function Home() {
   return (
     <div className="flex flex-col items-center">
       <div className="mt-10 w-3/5 py-20 px-20 bg-gradient-to-b flex flex-col items-center from-gray-100 to-white border-x border-gray-200">
         <div className="text-black text-6xl mt-20 font-inter font-bold text-center">
-          Shady clauses? Vakil sees through.
+          <Typewriter
+            text="Shady clauses? Vakil sees through it."
+            twProps="font-bold text-center text-black font-inter text-6xl"
+          />
         </div>
         <div className="px-40 text-primary-text text-lg mt-6 text-center leading-relaxed">
           Simplifies legal documents into clear, everyday language, helping
