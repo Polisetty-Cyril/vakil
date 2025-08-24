@@ -9,7 +9,7 @@ function App() {
     <div className="font-plus max-w-screen">
       <Appbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </div>
