@@ -1,0 +1,14 @@
+.scrollable-element::-webkit-scrollbar {
+  width: 8px; /* Adjust this value for desired thinness */
+  height: 8px; /* For horizontal scrollbars */
+}
+
+/* Optional: Style the scrollbar track and thumb */
+.scrollable-element::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scroll thumb */
+  border-radius: 20px; /* Optional: rounded corners */
+}
