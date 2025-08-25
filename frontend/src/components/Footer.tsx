@@ -1,9 +1,11 @@
+import { features } from "../assets/utils";
+
 export const Footer = () => {
   return (
-    <footer className="w-full max-h-[480px] overflow-hidden bg-bg/30 border-t border-border">
-      <div className="w-3/5 mx-auto h-[480px] flex flex-col items-center border-x border-border justify-between">
-        <div className="h-full w-full pt-20 flex">
-          <div className="w-1/3 px-10 flex justify-between mb-auto flex-col gap-4 pr-20">
+    <footer className="w-full overflow-hidden bg-bg/30 border-t border-border">
+      <div className="w-3/5 mx-auto flex flex-col items-center border-x border-border justify-between">
+        <div className="h-full w-full p-20 flex">
+          <div className="w-1/3 px-10 flex justify-evenly mb-auto flex-col gap-4 pr-20">
             <div className="font-inter font-extrabold bg-gradient-to-b from-shade-3 to-shade-4 bg-clip-text text-transparent text-7xl">
               Vakil
             </div>
@@ -11,28 +13,54 @@ export const Footer = () => {
               Vakil (वकील): An AI that makes legal documents simple and clear.
             </div>
           </div>
-          <div className="w-2/3 flex justify-between">
-            <div className="w-1/3 flex flex-col gap-10">
+          <div className="w-2/3 flex justify-evenly">
+            <div className="flex flex-col gap-10">
               <div className="text-black font-semibold">Product</div>
               <ul className="flex flex-col gap-3">
-                <li className="text-sm">Summarization</li>
-                <li className="text-sm">Anomaly Detection</li>
-                <li className="text-sm">Strategy suggestion</li>
-                <li className="text-sm">Q&A</li>
-                <li className="text-sm">Events timeline</li>
-                <li className="text-sm">Voice to text</li>
+                {features.map((item, i) => {
+                  return (
+                    <li
+                      className="text-sm cursor-pointer hover:text-primary"
+                      key={i}
+                      onClick={() => {
+                        document
+                          .getElementById(item.title.replace(/\s+/g, "-"))
+                          ?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                          });
+                      }}
+                    >
+                      {item.title}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
-            <div className="w-1/3 flex flex-col gap-10">
+            {/* <div className="w-1/3 flex flex-col gap-10">
               <div className="text-black font-semibold">Uses Cases</div>
-              <ul className="flex flex-col gap-3">
-                <li className="text-sm">Guidance</li>
-                <li className="text-sm">Comprehension</li>
-                <li className="text-sm">Agreements</li>
-                <li className="text-sm">Legalities</li>
+              <ul className="flex flex-col gap-3 max-w-1/3">
+                {useCases.map((item, i) => {
+                  return (
+                    <li
+                      className="text-sm cursor-pointer hover:text-primary"
+                      key={i}
+                      onClick={() => {
+                        document
+                          .getElementById(item.title.replace(/\s+/g, "-"))
+                          ?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                          });
+                      }}
+                    >
+                      {item.title}
+                    </li>
+                  );
+                })}
               </ul>
-            </div>
-            <div className="w-1/3 flex flex-col gap-10">
+            </div> */}
+            <div className="flex flex-col gap-10">
               <div className="text-primary-text font-semibold">Resources</div>
               <ul className="flex flex-col gap-3">
                 <li className="text-sm">Pricing</li>

@@ -14,7 +14,7 @@ export const ButtonWhite = ({
 }) => {
   return (
     <button
-      className={`font-semibold bg-bg border border-border text-primary rounded hover:bg-shade-3/25 transition scale-100 active:scale-95 active:bg-shade-3/50 ${textSizes[size]}`}
+      className={`font-semibold bg-bg border border-border text-primary rounded hover:bg-shade-3/25 cursor-pointer transition scale-100 active:scale-95 active:bg-shade-3/50 ${textSizes[size]}`}
       style={{
         padding: `${Math.round(size * 0.25 * 100) / 100}rem ${Math.round(size * 0.5 * 100) / 100}rem`,
       }}

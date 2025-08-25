@@ -1,6 +1,6 @@
 import { ButtonAscent } from "../components/ButtonAscent";
 import { ButtonWhite } from "../components/ButtonWhite";
-import { Cards } from "../components/Cards";
+import { Cards, UseCaseCards } from "../components/Cards";
 import { Typewriter } from "../components/Typewriter";
 
 export function Home() {
@@ -33,6 +33,25 @@ export function Home() {
           </div>
           <div className="overflow-auto max-h-[800px] py-10 px-4">
             <Cards />
+          </div>
+        </div>
+      </div>
+      <div className="w-full bg-white border-t border-border flex justify-center">
+        <div className="w-3/5 h-full border-x border-border flex flex-col py-20 px-8">
+          <span className="text-5xl text-black font-plus font-semibold">
+            Stay informed.
+          </span>
+          <span className="pt-2 text-5xl text-black font-plus font-semibold">
+            Keep your rights protected.
+          </span>
+          <p className="pt-10 text-gray-600 text-lg font-plus max-w-[500px]">
+            From plain-language summaries to anomaly detection and guided
+            actions, you can understand, contest, and resolve legal matters with
+            confidence.
+          </p>
+          <div className="w-full mt-20 relative">
+            <div className="absolute w-full bg-gradient-to-br from-white/5 to-white/10 z-10 h-full pointer-events-none"></div>
+            <UseCaseCards />
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export const ButtonAscent = ({
 }) => {
   return (
     <button
-      className={`font-semibold bg-primary text-white ${textSizes[size]} rounded hover:bg-shade-4 transition scle-100 active:scale-95 active:bg-shade-5`}
+      className={`font-semibold bg-primary text-white ${textSizes[size]} rounded hover:bg-shade-4 cursor-pointer transition scle-100 active:scale-95 active:bg-shade-5`}
       style={{
         padding: `${Math.round(size * 0.25 * 100) / 100}rem ${Math.round(size * 0.5 * 100) / 100}rem`,
       }}
