@@ -8,9 +8,11 @@ const textSizes: Record<number, string> = {
 export const ButtonAscent = ({
   label,
   size = 2,
+  onClick,
 }: {
   label: string;
   size?: number;
+  onClick?: () => void;
 }) => {
   return (
     <button
@@ -18,6 +20,7 @@ export const ButtonAscent = ({
       style={{
         padding: `${Math.round(size * 0.25 * 100) / 100}rem ${Math.round(size * 0.5 * 100) / 100}rem`,
       }}
+      onClick={onClick}
     >
       {label}
     </button>

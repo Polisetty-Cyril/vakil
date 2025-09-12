@@ -1,22 +1,157 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-inter: "Inter", sans-serif;
-  --font-plus: "Plus Jakarta Sans", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  --color-primary: #9333ea; /* purple-600 */
-  --color-shade-1: #faf5ff; /* purple-50 */
-  --color-shade-2: #e9d5ff; /* purple-200 */
-  --color-shade-3: #c084fc; /* purple-400 */
-  --color-shade-4: #6b21a8; /* purple-800 */
-  --color-shade-5: #4c1d95; /* purple-900 */
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-  --color-border: #e5e7eb; /* gray-200 */
-  --color-bg: #f9fafb; /* gray-50 */
-  --color-primary-text: #1f2937; /* gray-800 */
-  --color-muted-text: #9ca3af; /* gray-400 */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Purple Theme - Vakil Brand Colors */
+    --primary: 270 90% 60%; /* Main Purple */
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 270 90% 65%;
+    --primary-text: 215.4 16.3% 46.9%; /* Muted text color */
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-text: 215.4 16.3% 56.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Vakil Purple Shades */
+    --shade-1: 270 100% 97%; /* Very light purple */
+    --shade-2: 270 60% 90%; /* Light purple */
+    --shade-3: 270 90% 60%; /* Main purple */
+    --shade-4: 270 90% 50%; /* Darker purple */
+    --shade-5: 270 90% 40%; /* Darkest purple */
+
+    /* Background Colors */
+    --bg: 210 40% 98%; /* Light background */
+    --bg-secondary: 270 100% 99%; /* Very light purple background */
+
+    /* Border Colors */
+    --border: 214.3 31.8% 91.4%;
+    --border-light: 220 13% 91%;
+
+    /* Risk Level Colors */
+    --success: 142.1 76.2% 36.3%; /* Low Risk - Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 47.9 95.8% 53.1%; /* Medium Risk - Yellow */
+    --warning-foreground: 26 83.3% 14.1%;
+    --destructive: 0 84.2% 60.2%; /* High Risk - Red */
+    --destructive-foreground: 210 40% 98%;
+
+    --input: 214.3 31.8% 91.4%;
+    --ring: 270 90% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 90% 60%), hsl(270 90% 40%));
+    --gradient-hero: linear-gradient(180deg, hsl(270 100% 98%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(145deg, hsl(270 100% 99%), hsl(270 60% 97%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 270 90% 65%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 270 90% 70%;
+    --primary-text: 215 20.2% 65.1%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --muted-text: 215 20.2% 55.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --shade-1: 270 30% 15%;
+    --shade-2: 270 40% 25%;
+    --shade-3: 270 90% 65%;
+    --shade-4: 270 90% 55%;
+    --shade-5: 270 90% 45%;
+
+    --bg: 222.2 84% 4.9%;
+    --bg-secondary: 270 30% 8%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 0 0% 100%;
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 26 83.3% 14.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }

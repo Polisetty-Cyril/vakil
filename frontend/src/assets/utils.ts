@@ -53,7 +53,7 @@ export const useCases = [
 
 export const features = [
   {
-    title: "Document Simplification",
+    title: "Simplify Docs",
     description:
       "Break down complex legal terms into plain language summaries you can understand in minutes.",
   },
@@ -68,7 +68,7 @@ export const features = [
       "Get references to similar cases and learn from past outcomes.",
   },
   {
-    title: "Drafting & Communication",
+    title: "Drafting & Relay",
     description:
       "Generate ready-to-send emails, refund requests, or dispute letters instantly.",
   },
