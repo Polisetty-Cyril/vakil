@@ -72,18 +72,33 @@ export const Appbar = () => {
     <>
       <header className="fixed top-0 left-0 z-40 w-full h-16 bg-white/70 text-black flex items-center border-b border-border backdrop-blur-sm">
         <div className="container mx-auto flex items-center justify-between w-full px-4 sm:px-6 lg:px-8">
-          <div
-            className="text-primary font-inter font-bold text-2xl cursor-pointer"
-            onClick={() => {
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               navigate("/");
-            }}
-          >
-            Vakil
+            }}>
+            <div className="flex flex-col">
+              <span className="text-primary font-inter font-bold text-3xl">
+                Vakil
+              </span>
+              <span className="text-muted-foreground text-sm font-medium">
+                AI-Powered Legal Intelligence
+              </span>
+            </div>
           </div>
 
           <nav className="hidden lg:flex items-center gap-2">
             <ul className="flex items-center gap-4 font-medium text-primary-text">
+              <li className="flex items-center gap-4">
+                <ButtonWhite
+                  label="Sign in"
+                  size={1}
+                />
+                <ButtonAscent
+                  label="Sign up"
+                  size={1}
+                  onClick={() => navigate("/signup")}
+                />
+              </li>
               <li className="relative group px-4 py-2 hover:bg-shade-1 cursor-pointer rounded-sm hover:text-shade-3">
                 Product
                 <div className="absolute top-full left-0 mt-2 w-60 bg-white shadow-gray-400 shadow-2xl py-4 rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in">
@@ -236,6 +251,14 @@ export const Appbar = () => {
           </nav>
           <div className="mt-auto pt-6 border-t border-border flex flex-col gap-4">
             <ButtonWhite label="Sign in" size={2} />
+            <ButtonWhite 
+              label="Sign up" 
+              size={2} 
+              onClick={() => {
+                setIsMenuOpen(false);
+                navigate("/signup");
+              }}
+            />
             <ButtonAscent
               label="Try me"
               size={2}

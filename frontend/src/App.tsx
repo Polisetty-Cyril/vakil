@@ -10,7 +10,7 @@ import Pricing from "./pages/Pricing";
 import CaseAnalysis from "./pages/CaseAnalysis";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
-
+import Signup from "./pages/SignUp";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/analysis" element={<CaseAnalysis />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/signup" element={<Signup/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
